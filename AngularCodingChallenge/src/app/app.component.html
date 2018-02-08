@@ -1,0 +1,160 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form (ngSubmit)="onSubmit()" #f="ngForm">
+        <div
+          id="user-data"
+          ngModelGroup="userData"
+          #userData="ngModelGroup">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input
+              type="text"
+              id="firstName"
+              class="form-control"
+              ngModel
+              name="firstName"
+              required>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input
+              type="text"
+              id="lastName"
+              class="form-control"
+              ngModel
+              name="lastName"
+              required>
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input
+              type="email"
+              id="email"
+              class="form-control"
+              ngModel
+              name="email"
+              required
+              email
+              #email="ngModel">
+            <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email!</span>
+          </div>
+          <div class="form-group">
+            <label for="confirmEmail">Confirm E-mail</label>
+            <input
+              type="email"
+              id="confirmEmail"
+              class="form-control"
+              ngModel
+              name="confirmEmail"
+              required
+              email
+              #confirmEmail="ngModel">
+            <p *ngIf="(!(email.value == confirmEmail.value)&& confirmEmail.touched)">Email doesn't Match. Please Check!!!</p>
+          </div>
+        </div>
+        <label for="gen">Gender</label>
+        <div class="radio" id = "gen" *ngFor="let gender of genders">
+          <label>
+            <input
+              type="radio"
+              name="gender"
+              ngModel
+              [value]="gender"
+              required>
+            {{ gender }}
+          </label>
+        </div><br/>
+        <div class="form-group">
+          <label for="Country">Country</label><br/>
+          <select id="country" name="Country" [(ngModel)]="Country" required>
+            <option value="AF">Afghanistan</option>
+            <option value="BZ">Brazil</option>
+            <option value="CN">Canada</option>
+            <option value="DM">Denmark</option>
+            <option value="EP">Ethiopia</option>
+            <option value="FR">France</option>
+            <option value="GH">Ghana</option>
+            <option value="HN">Hungary</option>
+            <option value="IN">India</option>
+            <option value="JD">Jordan</option>
+            <option value="LV">Latvia</option>
+            <option value="MD">Maldives</option>
+            <option value="NP">Nepal</option>
+            <option value="PR">Peru</option>
+            <option value="US">United States of America</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="dob">Date of Birth</label><br/>
+          <input id="dob" name="dob" type="date" ngModel value="02-11-2007" required #dob>
+        </div>
+        <div class="form-group">
+          <label for="companyname">Company Name</label>
+          <input
+            type="text"
+            id="companyname"
+            class="form-control"
+            ngModel
+            name="companyname"
+            required>
+        </div>
+        <div class="form-group">
+          <label for="industry">Industry</label>
+          <input
+            type="text"
+            id="industry"
+            class="form-control"
+            [ngModel]
+            name="industry"
+            required>
+        </div>
+        <div class="form-group">
+          <label for="about">About You</label>
+          <textarea
+            name="about"
+            id = "about"
+            rows="3"
+            [ngModel]
+            maxlength = "255"
+            class="form-control"></textarea>
+        </div>
+        <div>
+          <hr/>
+          <input
+            type="checkbox"
+            id="newsletter"
+            value= "newsletter"
+            [ngModel]
+            name="newsletter">SignUp for our Newsletter.
+        </div>
+        <hr/>
+        <div>
+          <input
+            type="checkbox"
+            id="privacy"
+            value= "privacy"
+            ngModel
+            name="privacy"> Make my information public.
+        </div>
+        <hr/>
+        <input
+          type="checkbox"
+          name="Terms"
+          ngModel
+          value="Conditions" required> <strong>I accept the </strong>
+        <a target="_blank" href="#  " rel="nofollow noopener">Terms and conditions</a>
+        <br /><hr/><button
+          class="btn btn-primary"
+          type="submit"
+          [disabled]="(!f.valid) || (!(email.value == confirmEmail.value))">Submit</button>
+      </form>
+    </div>
+  </div>
+  <hr>
+  <div class="row" *ngIf="submitted">
+    <div class="col-xs-12">
+      <h1>Data Submitted Successfully!!!</h1>
+    </div>
+  </div>
+</div>
