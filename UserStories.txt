@@ -1,0 +1,34 @@
+<User Story>
+As an admin, I want to register new members in my application.
+<T-shirt Size Estimation> 
+XL
+<Acceptance Criteria>
+Members entering correct information in the all the fields will be registered to the application.
+
+<User Story>
+As an admin, I want to collect basic information(name, country etc..) for all members.
+<T-shirt Size Estimation> 
+L
+<Acceptance Criteria>
+All members should have the required basic information as displayed in the form field.
+
+<User Story>
+As an admin, I want to limit "About You" section to 255 characters.
+<T-shirt Size Estimation> 
+S
+<Acceptance Criteria>
+User should not be able to enter more than 255 chanracters.
+
+<User Story>
+As an admin, I want to validate emails for all the new registrations.
+<T-shirt Size Estimation> 
+L
+<Acceptance Criteria>
+Emails should be validated and confirmed for the form to be submitted.
+
+<User Story>
+As an admin, I want the user be able to submit the form only after agreeing to the the terms and the conditions.
+<T-shirt Size Estimation> 
+S
+<Acceptance Criteria>
+If, the terms and conditions are accepted(checkbox checked) only then the user will be able to submit the form.
