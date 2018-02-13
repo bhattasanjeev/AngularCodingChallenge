@@ -32,3 +32,10 @@ As an admin, I want the user be able to submit the form only after agreeing to t
 S
 <Acceptance Criteria>
 If, the terms and conditions are accepted(checkbox checked) only then the user will be able to submit the form.
+
+<User Story>
+As an user, I should be able to enter my information to register for the application.
+<T-shirt Size Estimation> 
+L
+<Acceptance Criteria>
+If, the user enters all the information correctly, he/she should be able to submit the form.
