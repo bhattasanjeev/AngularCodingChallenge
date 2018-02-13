@@ -9,7 +9,7 @@ Valid email should be entered in the email field and the it should match with th
 Terms and conditions should be checked before the user can submit the form.
 
 To run the application:
-Through command prompt, go to the root folder of the applcation.
+Through command prompt, go to the root folder of the application.
 Run "npm install".
 After that, run "npm start".
 Then you can see the application running at "localhost:4200/".
